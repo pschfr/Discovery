@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <Header msg="Welcome to Your Vue.js App."/>
+    <Header msg="Welcome to Discovery."/>
+    <p>Repositories grabbed: {{ repositoriesCount }}</p>
   </div>
 </template>
 
@@ -11,6 +12,22 @@ export default {
   name: 'app',
   components: {
     Header
+  },
+  data() {
+    return {
+      myGitHubData: {}
+    }
+  },
+  mounted: function() {
+    this.GitHubAPI.get('/user/repos', {}, [this.myGitHubData, 'repositories'])
+  },
+  computed: {
+    repositoriesCount: function () {
+      if (this.myGitHubData.repositories) {
+        return this.myGitHubData.repositories.length
+      }
+      return 'none yet...'
+    }
   }
 }
 </script>
