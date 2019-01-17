@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header msg="Welcome to Discovery."/>
+    <Header msg="Discovery"/>
     <Repos />
   </div>
 </template>

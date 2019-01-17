@@ -1,14 +1,11 @@
 <template>
     <div id="repos">
-		<p>{{ repositories.length }} repositories grabbed.</p>
-		<ul>
-			<li v-for="(repo, index) in repositories" :key="index">
-				<a :href="repo.html_url" target="_blank"><strong>{{ repo.name }}</strong></a>&nbsp;
-				<span class="lang">{{ repo.language }}</span>
-				<br/>
-				{{ repo.description }}
-			</li>
-		</ul>
+		<b-table striped outlined bordered small :items="repositories" :fields="fields">
+			<template slot="name" slot-scope="data">
+				<b-link :href=data.item.html_url target="_blank">{{ data.item.name }}</b-link>
+			</template>
+		</b-table>
+		<p id="length">{{ repositories.length }} repositories grabbed.</p>
 	</div>
 </template>
 

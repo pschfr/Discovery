@@ -10,6 +10,12 @@ Vue.use(VueResource)
 import GitHubAPI from 'vue-github-api'
 Vue.use(GitHubAPI, { token: process.env.VUE_APP_GITHUB_TOKEN })
 
+import BootstrapVue from 'bootstrap-vue'
+Vue.use(BootstrapVue)
+
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+
 Vue.config.productionTip = false
 
 new Vue({
