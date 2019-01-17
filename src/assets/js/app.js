@@ -14,11 +14,12 @@ export default {
     this.GitHubAPI.get('/user/repos', {}, [this.myGitHubData, 'repositories'])
   },
   computed: {
-    repositoriesCount: function () {
+    repositories: function() {
       if (this.myGitHubData.repositories) {
-        return this.myGitHubData.repositories.length
+        console.log(this.myGitHubData.repositories)
+        return this.myGitHubData.repositories
       }
-      return 'none yet...'
+      return null
     }
   }
 }
