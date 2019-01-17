@@ -6,14 +6,18 @@ export default {
 		}
 	},
 	mounted: function() {
-		this.GitHubAPI.get('/user/repos', {}, [this.myGitHubData, 'repositories'])
+		this.GitHubAPI.get('/search/repositories', {
+			// Gets query from URL parameters
+			'q': new URLSearchParams(window.location.search).get('q')
+		}, [this.myGitHubData, 'repositories'])
 	},
 	computed: {
 		// Returns list of repos from API
 		repositories: function() {
 			if (this.myGitHubData.repositories) {
-				console.log(this.myGitHubData.repositories)
-				return this.myGitHubData.repositories
+				// eslint-disable-next-line
+				console.log(this.myGitHubData.repositories.items)
+				return this.myGitHubData.repositories.items
 			}
 			return []
 		},
@@ -21,9 +25,10 @@ export default {
 		fields: function() {
 			return [
 				{
-					key: 'name',
+					key: 'full_name',
 					sortable: true,
-					isRowHeader: true
+					isRowHeader: true,
+					label: 'Name'
 				},
 				{
 					key: 'description',
@@ -37,6 +42,11 @@ export default {
 					key: 'stargazers_count',
 					sortable: true,
 					label: 'Stars'
+				},
+				{
+					key: 'forks_count',
+					sortable: true,
+					label: 'Forks'
 				}
 			]
 		}

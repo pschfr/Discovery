@@ -1,11 +1,10 @@
 <template>
     <div id="repos">
 		<b-table striped outlined bordered small :items="repositories" :fields="fields">
-			<template slot="name" slot-scope="data">
-				<b-link :href=data.item.html_url target="_blank">{{ data.item.name }}</b-link>
+			<template slot="full_name" slot-scope="data">
+				<b-link :href=data.item.html_url target="_blank">{{ data.item.full_name }}</b-link>
 			</template>
 		</b-table>
-		<p id="length">{{ repositories.length }} repositories grabbed.</p>
 	</div>
 </template>
 

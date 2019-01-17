@@ -33,4 +33,5 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - [`vue-cli` Guide](https://cli.vuejs.org/guide/)
 - [`vue-github-api` Documentation](https://clorichel.gitlab.io/vue-github-api/Vue_GitHubAPI.html)
 - [`bootstrap-vue` Documentation](https://bootstrap-vue.js.org/docs)
+- [Search Repositories GitHub API Documentation](https://developer.github.com/v3/search/#search-repositories)
 
