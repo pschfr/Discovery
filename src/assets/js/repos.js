@@ -11,6 +11,7 @@ export default {
 	computed: {
 	  repositories: function() {
 		if (this.myGitHubData.repositories) {
+			console.log(this.myGitHubData.repositories)
 		  return this.myGitHubData.repositories
 		}
 		return ''

@@ -3,12 +3,10 @@
 		<p>{{ repositories.length }} repositories grabbed.</p>
 		<ul>
 			<li v-for="(repo, index) in repositories" :key="index">
-				<h3>
-					<a :href="repo.html_url" target="_blank">
-						{{ repo.name }}
-					</a>
-				</h3>
-				<p>{{ repo.description }}</p>
+				<a :href="repo.html_url" target="_blank"><strong>{{ repo.name }}</strong></a>&nbsp;
+				<span class="lang">{{ repo.language }}</span>
+				<br/>
+				{{ repo.description }}
 			</li>
 		</ul>
 	</div>

@@ -4,4 +4,8 @@
 
 a {
 	color: inherit;
+	transition: opacity 0.25s ease;
+	&:hover, &:focus {
+		opacity: 0.67;
+	}
 }
