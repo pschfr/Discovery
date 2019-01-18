@@ -1,20 +1,6 @@
 import Vue from 'vue'
-import App from './components/App.vue'
-import Random from './components/Random.vue'
+import App from './App.vue'
 import './registerServiceWorker'
-
-// Import vue-router
-import VueRouter from 'vue-router'
-Vue.use(VueRouter)
-
-// Set up routes
-const routes = [
-	{ path: '/', component: App },
-	{ path: '/random', component: Random }
-];
-
-// Set up VueRouter
-new VueRouter({ routes });
 
 // vue-resource is needed for vue-github-api
 import VueResource from 'vue-resource'
@@ -34,5 +20,4 @@ Vue.config.productionTip = false
 
 new Vue({
   render: h => h(App),
-  routes
 }).$mount('#app')
