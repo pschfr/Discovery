@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import App from './components/App.vue'
+import Index from './components/Index.vue'
 import './registerServiceWorker'
 
 // vue-resource is needed for vue-github-api
@@ -19,5 +19,5 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 Vue.config.productionTip = false
 
 new Vue({
-  render: h => h(App),
+  render: h => h(Index),
 }).$mount('#app')
