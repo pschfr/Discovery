@@ -1,6 +1,6 @@
 <template>
     <div id="repos">
-		<b-table striped outlined bordered small :items="repositories" :fields="fields">
+		<b-table striped outlined bordered small responsive :items="repositories" :fields="fields">
 			<template slot="full_name" slot-scope="data">
 				<b-link :href=data.item.html_url target="_blank">{{ data.item.full_name }}</b-link>
 			</template>
